@@ -14,8 +14,9 @@ class StaticBody: public Body {
 
     public:
         // constructor
-        StaticBody(const b2Vec2& position, const b2Vec2& size, const float density):
-            Body(position, size, density, b2_staticBody) {}
+        StaticBody(const b2Vec2& position, const std::initializer_list<b2Vec2>& vertices,
+                   const float density):
+            Body(position, vertices, density, b2_staticBody) {}
 
         // to be called every frame
         void update(const sf::Time& time) override {
@@ -29,8 +30,9 @@ class DynamicBody: public Body {
 
     public: 
         // constructor
-        DynamicBody(const b2Vec2& position, const b2Vec2& size, const float density):
-            Body(position, size, density, b2_dynamicBody) {}
+        DynamicBody(const b2Vec2& position, const std::initializer_list<b2Vec2>& vertices,
+                    const float density):
+            Body(position, vertices, density, b2_dynamicBody) {}
 
         // to be called every frame
         void update(const sf::Time& time) override {
@@ -54,9 +56,19 @@ int main() {
     window.setFramerateLimit(60);
 
     // initialize test bodies
-    Body::gWorld.spawn<DynamicBody>(b2Vec2(3, 3), b2Vec2(2, 2), 1.f);
-    Body::gWorld.spawn<StaticBody>(b2Vec2(-5, 20), b2Vec2(7, 1), 1.f);
-    Body::gWorld.spawn<StaticBody>(b2Vec2(2, 21), b2Vec2(7, 1), 1.f);
+    Body::gWorld.spawn<StaticBody>(b2Vec2(2, 2), std::initializer_list<b2Vec2>{
+        b2Vec2(0, 10),
+        b2Vec2(10, 10),
+        b2Vec2(10, 12),
+        b2Vec2(0, 12)
+    }, 1.f);
+    Body::gWorld.spawn<DynamicBody>(b2Vec2(2, 2), std::initializer_list<b2Vec2>{
+        b2Vec2(0, 0),
+        b2Vec2(2, 2),
+        b2Vec2(2, 4),
+        b2Vec2(1, 5),
+        b2Vec2(0, 4)
+    }, 1.f);
 
     // main loop
     sf::Event e;

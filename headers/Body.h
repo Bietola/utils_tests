@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cassert>
+#include <initializer_list>
 
 #include <SFML/Graphics.hpp>
 #include <Box2D/Box2D.h>
@@ -18,10 +19,13 @@ class Body : public sf::Drawable, public sf::Transformable {
         // physics body
         b2Body* mPhysicsBody = nullptr;
 
+        // thing to draw
+        sf::ConvexShape mSprite;
+
     public:
         // simple constructore
-        Body(const b2Vec2& position, const b2Vec2& size, const float density,
-             const b2BodyType bodyType);
+        Body(const b2Vec2& position, const std::initializer_list<b2Vec2>& vertices,
+             const float density, const b2BodyType bodyType);
 
         // draw function
         void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
