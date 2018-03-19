@@ -1,20 +1,18 @@
 # initialize project
 cmake_minimum_required(VERSION 3.10.0)
-project(Lander)
+project(Proj)
 
 # compiler flags
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # load packages
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/build/cmake_modules)
+set(CMAKE_LIBRARY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules)
 find_package(SFML REQUIRED COMPONENTS graphics window system)
 
-# library directories
+# headers directories
 include_directories(${SFML_INCLUDE_DIR})
-
-# library sources
-# TODO
 
 # project directories
 include_directories(headers)
@@ -23,10 +21,7 @@ include_directories(headers)
 file(GLOB SRC src/*.cpp)
 
 # create exectuables
-# add_executable(Lander ${SRC} ${IMGUI_SRC})
-add_executable(Lander ${SRC}) 
+add_executable(Proj ${SRC}) 
 
 # link libraries
-target_link_libraries(Lander ${SFML_LIBRARIES} ${SFML_DPENDENCIES})
-target_link_libraries(Lander libBox2D.a libIMGUI.a)
-
+target_link_libraries(Proj ${SFML_LIBRARIES} ${SFML_DPENDENCIES})
