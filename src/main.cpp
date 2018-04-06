@@ -3,6 +3,10 @@
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(500, 500), "test");
+
+    sf::Texture catTexture;
+    catTexture.loadFromFile("assets/cat.jpg");
+
     while(window.isOpen()) {
 
         sf::Event e;
@@ -13,7 +17,11 @@ int main() {
         }
 
         window.clear();
-        window.draw(sf::RectangleShape({200, 200}));
+        window.draw([&catTexture] {
+            sf::Sprite sprt(catTexture);
+            sprt.scale(0.5, 0.5);
+            return sprt;
+        }());
         window.display();
     }
 
