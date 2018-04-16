@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/dincio/code/cpp/games/sfml/FerriroidsBuild/build",
-  "command": "/usr/bin/c++   -I/home/dincio/code/cpp/games/sfml/FerriroidsBuild/headers    -std=gnu++1z -o CMakeFiles/Proj.dir/src/main.cpp.o -c /home/dincio/code/cpp/games/sfml/FerriroidsBuild/src/main.cpp",
-  "file": "/home/dincio/code/cpp/games/sfml/FerriroidsBuild/src/main.cpp"
+  "directory": "/home/dincio/code/cpp/sfml/CMakeSFML/build",
+  "command": "/usr/bin/c++   -I/usr/local/include -I/home/dincio/code/cpp/sfml/CMakeSFML/headers    -std=gnu++1z -o CMakeFiles/Proj.dir/src/main.cpp.o -c /home/dincio/code/cpp/sfml/CMakeSFML/src/main.cpp",
+  "file": "/home/dincio/code/cpp/sfml/CMakeSFML/src/main.cpp"
 }
 ]

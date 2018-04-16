@@ -16,7 +16,8 @@ int main() {
 
         sf::Event e;
         if(window.pollEvent(e)) {
-            if(e.type == sf::Event::Closed) {
+            if(e.type == sf::Event::Closed ||
+               e.type == sf::Event::KeyPressed) {
                 window.close();
             }
         }
@@ -33,7 +34,7 @@ int main() {
             auto tb = text.getGlobalBounds();
             text.setPosition(ws.x / 2.f - tb.width  / 2.f,
                              ws.y / 2.f - tb.height / 2.f);
-            text.setColor(sf::Color::Yellow);
+            text.setFillColor(sf::Color::Yellow);
             return text;
         }());
         window.display();
