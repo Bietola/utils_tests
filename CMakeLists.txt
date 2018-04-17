@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # load packages
-set(CMAKE_LIBRARY_PATH /usr/local/lib/SFML)
+set(CMAKE_LIBRARY_PATH /usr/local/lib/sfml)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules)
 find_package(SFML REQUIRED COMPONENTS graphics window system)
 
