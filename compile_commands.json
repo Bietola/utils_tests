@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/dincio/code/ready/CMakeSFML/build",
-  "command": "/usr/bin/c++   -I/home/dincio/code/ready/CMakeSFML/include -isystem /usr/local/include    -Werror -std=gnu++1z -o CMakeFiles/Proj.dir/src/main.cpp.o -c /home/dincio/code/ready/CMakeSFML/src/main.cpp",
-  "file": "/home/dincio/code/ready/CMakeSFML/src/main.cpp"
-}
-]
