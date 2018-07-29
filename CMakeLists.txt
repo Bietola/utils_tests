@@ -11,7 +11,7 @@ add_executable(Proj src/main.cpp)
 # include directories
 target_include_directories(Proj
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 # compiler properties
