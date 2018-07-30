@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Proj VERSION 1.0.0 LANGUAGES CXX)
 
 # load packages
-find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
+#TODO: no packages for now
 
 # create target executable
 add_executable(Proj src/main.cpp)
@@ -22,10 +22,7 @@ target_compile_features(Proj PRIVATE cxx_std_17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # link libraries
-target_link_libraries(Proj
-    PRIVATE
-        sfml-graphics
-)
+#TODO: no libraries for now
 
 # copy resources from resource directories into build directory
 set(source "${CMAKE_SOURCE_DIR}/assets")
