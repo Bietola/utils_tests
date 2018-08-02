@@ -1,3 +1,8 @@
+# selected example
+# created ones:
+#   -> prototype
+set(SELECTED_EXAMPLE prototype)
+
 # initialize project
 cmake_minimum_required(VERSION 3.5)
 project(Proj VERSION 1.0.0 LANGUAGES CXX)
@@ -6,7 +11,8 @@ project(Proj VERSION 1.0.0 LANGUAGES CXX)
 #TODO: no packages for now
 
 # create target executable
-add_executable(Proj src/main.cpp)
+file(GLOB_RECURSE PROJECT_SOURCES src/examples/${SELECTED_EXAMPLE}/**.cpp)
+add_executable(Proj ${PROJECT_SOURCES})
 
 # include directories
 target_include_directories(Proj
