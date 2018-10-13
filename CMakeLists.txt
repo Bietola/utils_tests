@@ -1,7 +1,8 @@
 # selected example
 # created ones:
 #   -> prototype
-set(SELECTED_EXAMPLE prototype)
+#   -> void
+set(SELECTED_EXAMPLE void)
 
 # initialize project
 cmake_minimum_required(VERSION 3.5)
